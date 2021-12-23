@@ -8,15 +8,19 @@ import {
   fibo_recursion,
   fibo_while_loop,
 } from "../src/index.ts";
-Deno.test("fibonacci sequence test", () => {
+Deno.test("fibonacci sequence with recursion test", () => {
   assert(fibo_recursion(5));
   assertEquals(fibo_recursion(3), [0, 1, 1]);
   assertArrayIncludes(fibo_recursion(10), [0, 5, 34]);
+});
 
+Deno.test("fibonacci sequence with for loop test", () => {
   assert(fibo_for_loop(5));
   assertEquals(fibo_for_loop(3), [0, 1, 1, 2, 3]);
   assertArrayIncludes(fibo_for_loop(10), [0, 5, 34]);
+});
 
+Deno.test("fibonacci sequence while loop test", () => {
   assert(fibo_while_loop(5));
   assertEquals(fibo_while_loop(3), [0, 1, 1, 2, 3]);
   assertArrayIncludes(fibo_while_loop(10), [0, 5, 34]);
